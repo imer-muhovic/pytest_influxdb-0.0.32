@@ -22,6 +22,6 @@ setuptools.setup(
     classifiers=[
         "Programming Language :: Python :: 3"
     ],
-    install_requires=['pytest', 'pytest-xdist', 'influxdb', 'pytest-rerunfailures'],
+    install_requires=['pytest', 'pytest-xdist', 'influxdb-client[ciso]', 'pytest-rerunfailures'],
     entry_points={'pytest11': ['pytest-influxdb-plugin = pytest_influxdb.plugin', ], },
 )

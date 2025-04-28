@@ -1,4 +1,4 @@
 pytest
 pytest-xdist
-influxdb
+influxdb-client[ciso]
 pytest-rerunfailures
