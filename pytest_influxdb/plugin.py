@@ -266,6 +266,9 @@ def pytest_terminal_summary(config, terminalreporter):
                 data_manager.send_suite_data_to_db(suite_json, influxdb_components)
             except Exception as e:
                 print(f"Influxdb connection problem raised when sending suite data to db: {e}")
+            finally:
+                # Ensure proper cleanup of InfluxDB components
+                influxdb_components.close()
 
 
 def are_tests_skipped(terminalreporter_values):

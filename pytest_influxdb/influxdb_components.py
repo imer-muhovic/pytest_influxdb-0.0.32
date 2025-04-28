@@ -32,3 +32,11 @@ class Influxdb_Components:
     def write_points(self, points):
         # Sending points to db
         self.__write_api.write(bucket=self.__bucket, org=self.__org, record=points)
+    
+    def close(self):
+        """Ensure proper cleanup of resources."""
+        if self.__write_api:
+            self.__write_api.flush()
+            self.__write_api.__del__()  # Flush and close the WriteAPI
+        if self.__client:
+            self.__client.close()  # Close the InfluxDB client connection
