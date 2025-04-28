@@ -32,3 +32,5 @@ class Influxdb_Components:
     def write_points(self, points):
         # Sending points to db
         self.__write_api.write(bucket=self.__bucket, org=self.__org, record=points)
+        self.__write_api.flush()
+        self.__write_api.close()
