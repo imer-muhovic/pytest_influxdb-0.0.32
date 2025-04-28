@@ -10,7 +10,7 @@ class Influxdb_Components:
     def __init__(self, url, token, org, bucket):
         if 'localhost' in url:
             url = 'http://localhost:8086'
-        self.__client = InfluxDBClient(url=url, token=token, org=org)
+        self.__client = InfluxDBClient(url=url, token=token, org=org, verify_ssl=True)
         self.__write_api = self.__client.write_api(write_options=WriteOptions(batch_size=1))
         self.__bucket = bucket
         self.__org = org
