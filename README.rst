@@ -1,5 +1,6 @@
 Influxdb Pytest Plugin
 ======================
+**This repo is a fork of https://pypi.python.org/pypi/pytest-influxdb updated to work with InfluxDBV2.**
 
 Influxdb `Pytest <http://pytest.org>`_ Plugin designed for reporting test results to the `InfluxDB <https://www.influxdata.com/>`_
 and provide with the live test results report which can be later integrated with a reporting tool.
